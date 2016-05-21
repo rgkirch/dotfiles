@@ -14,8 +14,8 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 " end vundle
-" let g:ycm_global_ycm_extra_conf = '~/Dropbox/ConfigFiles/.ycm_global_ycm_extra_conf'
-let g:ycm_extra_conf_globlist = ['~/github/rgkirch']
+let g:ycm_global_ycm_extra_conf = '$HOME/dotfiles/.ycm_global_ycm_extra_conf'
+"let g:ycm_extra_conf_globlist = ['~/github/rgkirch']
 let mapleader = ","
 " nnoremap <leader>r :Ypf{a"f}i":s/, /", "/g02dwichar* eaNames[]
 nnoremap <F5> :buffers<CR>:buffer<Space>
