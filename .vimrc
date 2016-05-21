@@ -40,11 +40,11 @@ set smartcase
 " end recommended syntactic
 
 " backups and other junky files
-set backupdir=~/.vim/backup     " get backups outta here
-set directory=~/.vim/swap       " get swapfiles outta here
+" set backupdir=~/.vim/backup     " get backups outta here
+" set directory=~/.vim/swap       " get swapfiles outta here
+" set undodir=~/.vim/undo         " persistent undo storage
+" set undofile                    " persistent undo on
 set writebackup                 " temp backup during write
-set undodir=~/.vim/undo         " persistent undo storage
-set undofile                    " persistent undo on
 " end
 
 set splitright
