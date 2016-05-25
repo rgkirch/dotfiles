@@ -48,6 +48,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git mercurial python command-not-found compleat debian git-extras)
 
+export KEYTIMEOUT=2
+bindkey -v
+
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/richie/.gem/ruby/2.3.0/bin"

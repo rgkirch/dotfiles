@@ -15,6 +15,7 @@ call vundle#end()
 filetype plugin indent on
 " end vundle
 let g:ycm_global_ycm_extra_conf = '$HOME/dotfiles/.ycm_global_ycm_extra_conf'
+let g:ycm_confirm_extra_conf = 1
 let g:ycm_extra_conf_globlist = ['$HOME/dotfiles/.ycm_extra_conf.py', '/home/eve/Github/myGL/.ycm_extra_conf.py']
 let mapleader = ","
 " nnoremap <leader>r :Ypf{a"f}i":s/, /", "/g02dwichar* eaNames[]
@@ -23,7 +24,9 @@ nnoremap <down> gj
 nnoremap <up> gk
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>cp "+p
+vnoremap <leader>cp "+p
 nnoremap <leader>cy "+y
+vnoremap <leader>cy "+y
 vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
 
 set smartcase
