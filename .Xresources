@@ -1,0 +1,38 @@
+urxvt*background: black
+urxvt*foreground: white
+urxvt.scrollBar: false
+urxvt.font: xft:monospace:size=18
+urxvt.perl-ext-common: resize-font
+urxvt.resize-font.smaller: C-minus
+urxvt.resize-font.bigger: C-equal
+urxvt.secondaryScreen: 1
+urxvt.secondaryScroll: 0
+urxvt.secondaryWheel: 1
+! do not scroll with output
+urxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+urxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+urxvt*scrollTtyKeypress: true
+! xterm*font: *-fixed-*-*-*-18-*
+xterm*locale: true
+xterm*metaSendsEscape: true
+xterm*saveLines: 4096
+xterm*alternateScroll: true
+xterm*selectToClipboard: true
+xterm*reverseVideo: on
+xterm*faceName: monospace:size=18:antialias=true
+xterm*font: 7x13
+! xterm*foreground: rgb:b2/b2/b2
+! xterm*background: rgb:08/08/08
+
+uxterm*locale: true
+uxterm*metaSendsEscape: true
+uxterm*saveLines: 4096
+uxterm*alternateScroll: true
+uxterm*selectToClipboard: true
+uxterm*reverseVideo: on
+uxterm*faceName: monospace:size=18:antialias=true
+uxterm*font: 7x13
+uxterm.resize-font.smaller: C-minus
+uxterm.resize-font.bigger: C-equal
