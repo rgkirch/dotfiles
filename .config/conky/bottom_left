@@ -1,0 +1,48 @@
+conky.config = {
+	alignment = 'bottom_left',
+	background = true,
+	cpu_avg_samples = 2,
+	default_color = '000000',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=8',
+	gap_x = 24,
+	gap_y = 45,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 60,
+	use_xft = true,
+    draw_outline = false,
+    draw_shades = false,
+}
+conky.text = [[
+${font liberation-serif:size=12}
+arandr - visual front end for XRandR 1.2
+blueman-assistant - application for configuring and pairing bluetooth devices
+blueman-manager - bluetooth device manager
+gpicview - no man page
+gufw - Graphic user interface for managing ufw
+hexchat - IRC Client
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+lxappearance - GTK+ theme switcher
+mousepad - text editor
+pcmanfm - A lightweight Gtk+ based file manager for X Window
+pinta - simple image editor
+qpdf - PDF transformation software
+qpdfview - tabbed document viewer
+scrot - capture a screenshot using imlib2
+system-config-printer - configure a CUPS server
+zenmap - Graphical Nmap frontend and results viewer
+$hr
+strftime - format date and time
+i3exit lock ,suspend ,switch_user ,logout,hibernate,reboot ,shutdown
+tagaini
+$hr
+setxkbmap -option caps:escape
+xrdb .Xresources
+xmodmap .Xmodmap
+sudo mount -t cifs -o username=richie,uid=1000,gid=1000 //192.168.43.20/d ~/mount/delta/d
+]]

@@ -1,0 +1,26 @@
+conky.config = {
+	default_color = 'FF9999',
+	font = 'monospace:size=22',
+    text_buffer_size = 2048,
+    short_units = true,
+	alignment = 'top_middle',
+	background = true,
+	gap_x = 0,
+	gap_y = 0,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_argb_visual = true,
+	own_window_transparent = true,
+    draw_outline = false,
+    draw_shades = false,
+	update_interval = 60,
+	use_xft = true,
+	double_buffer = true,
+	cpu_avg_samples = 2,
+    diskio_avg_samples = 2,
+    net_avg_samples = 2,
+}
+conky.text = [[
+${exec sleep 10; echo "workout 40 pushups, 39 situps, 58 squats"}
+]]

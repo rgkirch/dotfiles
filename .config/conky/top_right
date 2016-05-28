@@ -1,0 +1,55 @@
+conky.config = {
+	default_color = '000000',
+    draw_graph_borders = false,
+	font = 'liberation-serif:size=12',
+    short_units = true,
+	alignment = 'top_right',
+	minimum_width = 200,
+	background = true,
+	gap_x = 14,
+	gap_y = 8,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_argb_visual = true,
+	own_window_transparent = true,
+    draw_outline = false,
+    draw_shades = false,
+	update_interval = 10,
+	use_xft = true,
+	double_buffer = true,
+	cpu_avg_samples = 2,
+}
+conky.text = [[
+${font monospace:size=34}${time %l}${font monospace:size=26}${time %M}${font monospace:size=20}${time %S%P}${font monospace:size=16}$alignr${time %j}
+$alignr$font${voffset -10}${time %s}
+${offset 20}${voffset -10}${font monospace:size=16}${time %A %e}
+${offset 20}${font monospace:size=16}${time %B %Y}
+#
+${offset 30}$font${voffset 2}$cpu${voffset -10}$cpugraph
+${offset 40}${voffset -8}${top name 1}$alignr${top cpu 1}%
+${offset 40}${top name 2}$alignr${top cpu 2}%
+${offset 40}${top name 3}$alignr${top cpu 3}%
+${offset 40}${top name 4}$alignr${top cpu 4}%
+${offset 40}${top name 5}$alignr${top cpu 5}%
+#
+${offset 30}${font}${voffset 10}$mem${voffset -10}$memgraph
+${offset 40}${voffset -8}${top_mem name 1}$alignr${top_mem mem_res 1}
+${offset 40}${top_mem name 2}$alignr${top_mem mem_res 2}
+${offset 40}${top_mem name 3}$alignr${top_mem mem_res 3}
+${offset 40}${top_mem name 4}$alignr${top_mem mem_res 4}
+${offset 40}${top_mem name 5}$alignr${top_mem mem_res 5}
+#
+${offset 30}swap$alignr${swap} / ${swapfree}
+${offset 30}diskio${alignr}${diskio}
+#
+#${offset 40}acpiacadapter ${acpiacadapter}
+#${offset 40}acpifan ${acpifan}
+${offset 40}acpitemp ${acpitemp}c
+${offset 40}addr ${addr wlp1s0}
+${offset 40}${battery_time}${offset 4}${battery_bar}
+#${offset 40}${desktop}${desktop_name}${desktop_number}
+#${offset 40}${freq}
+${voffset -2}${offset 30}${fs_bar /}
+${voffset -13}${offset 30}${fs_bar /home}
+]]

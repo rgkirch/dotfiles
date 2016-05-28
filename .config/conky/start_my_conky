@@ -1,0 +1,9 @@
+## start the grey conkies ##
+#!/bin/bash
+
+#conky -c /home/richie/.config/conky/top_left &&
+conky -c /home/richie/.config/conky/top_middle &&
+conky -c /home/richie/.config/conky/top_right &&
+conky -c /home/richie/.config/conky/bottom_left &&
+
+exit 0
