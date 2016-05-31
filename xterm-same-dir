@@ -1,0 +1,2 @@
+#!/bin/sh
+uxterm -w 0 -e "cd \"$(xcwd)\" && $SHELL"
