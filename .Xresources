@@ -1,7 +1,7 @@
 urxvt*background: black
 urxvt*foreground: white
 urxvt.scrollBar: false
-urxvt.font: xft:monospace:size=18
+urxvt.font: xft:monospace:size=20
 urxvt.perl-ext-common: resize-font
 urxvt.resize-font.smaller: C-minus
 urxvt.resize-font.bigger: C-equal
