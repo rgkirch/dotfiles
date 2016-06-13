@@ -2,7 +2,10 @@
 #
 # ;qjbmz
 
-smart_borders on
+#smart_borders on
+
+hide_edge_borders both
+new_window pixel 0
 
 	# Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -201,7 +204,7 @@ bindsym Shift+Ctrl+F9 exec amixer set Master 2%-
 bindsym Shift+Ctrl+F10 exec amixer set Master 1%+
 bindsym Shift+Ctrl+F6 exec xbacklight -dec 4
 bindsym Shift+Ctrl+F7 exec xbacklight -inc 9
-bindsym F3 exec /home/richie/Dropbox/toggle-xinput.sh -t
+bindsym Shift+Ctrl+F3 exec /home/richie/Dropbox/toggle-xinput.sh -t
 #bindsym XF86AudioLowerVolume exec amixer set Headphone 2dB-
 #bindsym XF86AudioRaiseVolume exec amixer set Headphone 1dB+
 #bindsym Ctrl+XF86AudioLowerVolume exec amixer set Speaker 2dB-
@@ -215,6 +218,8 @@ bindsym Ctrl+F5 exec arandr
 #bindcode 121 exec amixer set Master 0%
 
 bar {
+    status_command i3status
+    font monospace
 	colors {
 			background #000000
 			statusline #FFFFFF #that neon blue
@@ -224,8 +229,6 @@ bar {
 			inactive_workspace #333333 #222222 #888888
 			urgent_workspace   #2f343a #900000 #ffffff
 	}
-    font monospace
-    status_command sh i3status.sh
 }
 
 # Autostart applications
