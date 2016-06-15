@@ -11,6 +11,7 @@ Plugin 'xolox/vim-easytags'
 Plugin 'wincent/command-t'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 filetype plugin indent on
 " end vundle
