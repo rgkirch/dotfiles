@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$USER/.oh-my-zsh
+export PATH=$PATH:/usr/bin/core_perl
 # export ZSH=/home/dog/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -97,3 +98,6 @@ alias dec="xbacklight -dec 6"
 alias inc="xbacklight -inc 14"
 alias gsm="gnome-system-monitor"
 alias fuck="ssh"
+
+BROWSER=/usr/sbin/firefox
+EDITOR=/usr/sbin/vim

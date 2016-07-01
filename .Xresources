@@ -6,7 +6,7 @@ urxvt.perl-ext-common: resize-font
 urxvt.resize-font.smaller: C-minus
 urxvt.resize-font.bigger: C-equal
 urxvt.secondaryScreen: 1
-urxvt.secondaryScroll: 0
+urxvt.secondaryScroll: 1
 urxvt.secondaryWheel: 1
 ! do not scroll with output
 urxvt*scrollTtyOutput: false

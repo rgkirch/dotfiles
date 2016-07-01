@@ -31,9 +31,9 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+Shift+h move left
-bindsym $mod+Shift+t move down
-bindsym $mod+Shift+n move up
-bindsym $mod+Shift+s move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 		
 	# split in horizontal orientation
 bindsym $mod+r split horizontal
@@ -62,15 +62,15 @@ bindsym $mod+i focus parent
 bindsym $mod+d focus child
 
 	# switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+1 workspace 1; exec feh --bg-scale /tmp/work1
+bindsym $mod+2 workspace 2; exec feh --bg-scale /tmp/work2
+bindsym $mod+3 workspace 3; exec feh --bg-scale /tmp/work3
+bindsym $mod+4 workspace 4; exec feh --bg-scale /tmp/work4
+bindsym $mod+5 workspace 5; exec feh --bg-scale /tmp/work5
+bindsym $mod+6 workspace 6; exec feh --bg-scale /tmp/work6
+bindsym $mod+7 workspace 7; exec feh --bg-scale /tmp/work7
+bindsym $mod+8 workspace 8; exec feh --bg-scale /tmp/work8
+bindsym $mod+9 workspace 9; exec feh --bg-scale /tmp/work9
 #bindsym $mod+0 workspace 10
 
 	# move focused container to workspace
@@ -86,14 +86,14 @@ bindsym $mod+Shift+9 move container to workspace 9
 #bindsym $mod+Shift+0 move container to workspace 10
 
 	# reload the configuration file
-bindsym $mod+Shift+j reload
+bindsym $mod+Shift+r reload
 	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+q restart
 	# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+semicolon exec "i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
+#bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
@@ -112,14 +112,14 @@ mode "$mode_system" {
 	# resize window (you can also use the mouse for that)
 mode "resize" {
 		bindsym h resize shrink width 1 px or 1 ppt
-		bindsym t resize grow height 1 px or 1 ppt
-		bindsym n resize shrink height 1 px or 1 ppt
-		bindsym s resize grow width 1 px or 1 ppt
+		bindsym j resize grow height 1 px or 1 ppt
+		bindsym k resize shrink height 1 px or 1 ppt
+		bindsym l resize grow width 1 px or 1 ppt
 
 		bindsym Shift+h resize shrink width 10 px or 10 ppt
-		bindsym Shift+t resize grow height 10 px or 10 ppt
-		bindsym Shift+n resize shrink height 10 px or 10 ppt
-		bindsym Shift+s resize grow width 10 px or 10 ppt
+		bindsym Shift+j resize grow height 10 px or 10 ppt
+		bindsym Shift+k resize shrink height 10 px or 10 ppt
+		bindsym Shift+l resize grow width 10 px or 10 ppt
 
 		# back to normal: Enter or Escape
 		bindsym Return mode "default"
@@ -168,16 +168,16 @@ bar {
 }
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
-exec --no-startup-id volumeicon
+# exec --no-startup-id volumeicon
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
+# exec --no-startup-id pamac-tray
 # exec --no-startup-id clipit
 # exec --no-startup-id blueman
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id compton -b
+# exec --no-startup-id compton -b
 # exec --no-startup-id start_my_conky
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock -lockaftersleep
@@ -191,6 +191,7 @@ font monospace
 #exec capsescape
 #exec indicator-cpufreq
 exec --no-startup-id dropbox start
+exec sh ~/rgkirch/dotfiles/loadBackgroundsToTmp.sh
 #exec --no-startup-id sleep 15; synergy; move container to workspace 0
 #exec --no-startup-id easystroke enable hide;
 #exec --no-startup-id syndaemon -i .2 -K -d
