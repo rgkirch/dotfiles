@@ -1,13 +1,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$USER/.oh-my-zsh
-export PATH=$PATH:/usr/bin/core_perl
-# export ZSH=/home/dog/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt beep extendedglob
+unsetopt autocd
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,7 +56,12 @@ bindkey -v
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/richie/.gem/ruby/2.3.0/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/richie/.gem/ruby/2.3.0/bin:"
+export PATH=$PATH:/usr/bin/core_perl
+export EDITOR="vim"
+#export TERM="screen-256color"
+#. /lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
+export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus

@@ -153,19 +153,19 @@ bindsym $mod+x [urgent=latest] focus
 
 #bindcode 121 exec amixer set Master 0%
 
-bar {
-    status_command i3status
-    font monospace
-	colors {
-			background #000000
-			statusline #FFFFFF #that neon blue
-			separator #FF69B4
-			focused_workspace  #4c7899 #285577 #ffffff
-			active_workspace   #333333 #5f676a #ffffff
-			inactive_workspace #333333 #222222 #888888
-			urgent_workspace   #2f343a #900000 #ffffff
-	}
-}
+#bar {
+#    status_command i3status
+#    font monospace
+#	colors {
+#			background #000000
+#			statusline #FFFFFF #that neon blue
+#			separator #FF69B4
+#			focused_workspace  #4c7899 #285577 #ffffff
+#			active_workspace   #333333 #5f676a #ffffff
+#			inactive_workspace #333333 #222222 #888888
+#			urgent_workspace   #2f343a #900000 #ffffff
+#	}
+#}
 
 # Autostart applications
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -199,3 +199,6 @@ exec --no-startup-id xrdb ~/.Xresources
 #bindsym Mod4+l exec dm-tool lock
 #exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/gnome-system-monitor; exec /usr/bin/gnome-power-statistics; exec /usr/bin/unity-control-center; workspace 1'
 #showkey
+
+#exec i3status | /usr/lib/python3.5/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3
+#exec i3status | lemonbar -p --i3
