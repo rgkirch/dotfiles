@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$USER/.oh-my-zsh
+# export WWW_HOME=http://www.google.com/
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -105,6 +106,7 @@ alias dec="xbacklight -dec 6"
 alias inc="xbacklight -inc 14"
 alias gsm="gnome-system-monitor"
 alias fuck="ssh"
+alias install="pacaur --noconfirm -S"
 
 BROWSER=/usr/sbin/firefox
 EDITOR=/usr/sbin/vim

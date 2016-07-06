@@ -5,7 +5,7 @@ urxvt.font: xft:monospace:size=20
 urxvt.perl-ext-common: resize-font
 urxvt.resize-font.smaller: C-minus
 urxvt.resize-font.bigger: C-equal
-urxvt.secondaryScreen: 1
+urxvt.secondaryScreen: 0
 urxvt.secondaryScroll: 1
 urxvt.secondaryWheel: 1
 ! do not scroll with output
@@ -37,6 +37,6 @@ uxterm*font: 7x13
 uxterm.resize-font.smaller: C-minus
 uxterm.resize-font.bigger: C-equal
 
-#*font: xft:Liberation Mono for Powerline:style=Bold:size=20
+! *font: xft:Liberation Mono for Powerline:style=Bold:size=20
 *scrollBar: false
 *letterSpace: -1
