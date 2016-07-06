@@ -1,0 +1,6 @@
+2016-07-05-0731
+fresh install of manjaro with old home
+there wasn't a 50-synaptic.conf in /etc/X11/xorg.conf.d and synclient wasn't installed so I installed xf86-input-synaptics and copied something to 50-synaptic.conf
+$ sudo cp ~/50-synaptic.conf /X11/xorg.conf.d
+$ install xf86-input-synaptics
+vim doesn't have clipboard
