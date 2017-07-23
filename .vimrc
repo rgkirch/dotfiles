@@ -16,6 +16,8 @@ call vundle#begin()
 "Plugin 'Valloric/ListToggle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'tomlion/vim-solidity'
 "Plugin 'honza/vim-snippets'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'majutsushi/tagbar'
@@ -44,7 +46,7 @@ filetype off
 
 " syntax highlighting
 syntax on
-
+let g:rustfmt_autosave = 1
 let mapleader = ","
 
 let g:ycm_global_ycm_extra_conf = '$HOME/dotfiles/.ycm_global_ycm_extra_conf'
@@ -77,6 +79,7 @@ vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
 cmap w!! w !sudo tee > /dev/null %
 set ignorecase
 set smartcase
+set incsearch
 
 " syntactic recommended
 "set statusline+=%#warningmsg#

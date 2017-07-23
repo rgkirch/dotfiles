@@ -57,16 +57,24 @@ bindkey -v
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/richie/.gem/ruby/2.3.0/bin:"
-export PATH=$PATH:/usr/bin/core_perl
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin"
+export PATH="$PATH:/usr/bin/core_perl"
 export EDITOR="vim"
 #export TERM="screen-256color"
 #. /lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
-export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
 #export QT_IM_MODULE=ibus
+#
+# set PATH so it includes user's private bin directories
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"
+if [ -e /home/richie/.nix-profile/etc/profile.d/nix.sh ]; then . /home/richie/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,7 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias update="sudo apt-get update && sudo apt-get upgrade"
+alias update="sudo apt-get update"
+alias upgrade="sudo apt-get upgrade"
 alias pwdxcl="pwd | xclip -selection clipboard"
 alias addall="git add --all :/"
 alias fuckoff="poweroff"
@@ -107,6 +116,15 @@ alias inc="xbacklight -inc 14"
 alias gsm="gnome-system-monitor"
 alias fuck="ssh"
 alias install="pacaur --noconfirm -S"
+alias apti="sudo apt install"
+alias wfica.sh="/opt/Citrix/ICAClient/wfica.sh"
+
+alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias grun='java org.antlr.v4.gui.TestRig'
 
 BROWSER=/usr/sbin/firefox
 EDITOR=/usr/sbin/vim
+alias gst="git status"
+alias cinder="rgkirch; cd glfw/cinder"
+alias rgkirch="cd ~/Documents/rgkirch"
+alias gad="git add "
