@@ -14,7 +14,7 @@ urxvt*scrollTtyOutput: false
 urxvt*scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 urxvt*scrollTtyKeypress: true
-! xterm*font: *-fixed-*-*-*-18-*
+xterm*font: *-fixed-*-*-*-28-*
 xterm*locale: true
 xterm*metaSendsEscape: true
 xterm*saveLines: 4096

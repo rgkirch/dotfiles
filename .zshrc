@@ -106,7 +106,13 @@ alias dec="xbacklight -dec 6"
 alias inc="xbacklight -inc 14"
 alias gsm="gnome-system-monitor"
 alias fuck="ssh"
-alias install="pacaur --noconfirm -S"
+alias install="sudo apt-get install"
+alias search="apt-cache search"
 
 BROWSER=/usr/sbin/firefox
 EDITOR=/usr/sbin/vim
+alias ginitrec="git submodule update --init --recursive"
+alias dim="xrandr --output DVI-1 --brightness"
+alias gocinder="cd ~/Documents/rgkirch/graphics/cinder/"
+alias gad="git add"
+alias gst="git status"

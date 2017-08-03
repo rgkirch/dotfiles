@@ -1,13 +1,31 @@
+nmap <F8> :bn
+nmap <F7> :bN
+                                    "!! <highlighted text> runs the text in a terminal
+vmap <Space>e "zyo!!z
+                                    "reloads the vimrc
+nmap <Space>rr :source $MYVIMRC
+                                    "yank text to clipboard
+vmap <Space>cc "+y
+                                    "paste text from clipboard
+vmap <Space>cp "+p
+                                    "doesn't work unless the terminal is set up
+nmap <C-S> :w
+
+                                    "edit vimrc
+nmap <Space>vrc :edit $MYVIMRC
+
 set number
 set autochdir
-" a tab is 4 columns long
+
+                                    "a tab is 4 columns long
 set tabstop=4
 set shiftwidth=4
-" convert tabs to spaces
+                                    " convert tabs to spaces
 set expandtab
 set fillchars+=vert:\ 
 set nocompatible
 filetype off
+
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -35,17 +53,24 @@ call vundle#end()
 " end vundle
 filetype plugin indent on
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 set laststatus=2
 
 filetype off
 
 " syntax highlighting
-syntax on
+" syntax on
 
 let mapleader = ","
+
+" Syntastic reccomended defaults
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
 
 let g:ycm_global_ycm_extra_conf = '$HOME/dotfiles/.ycm_global_ycm_extra_conf'
 let g:ycm_confirm_extra_conf = 1
@@ -77,17 +102,7 @@ vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
 cmap w!! w !sudo tee > /dev/null %
 set ignorecase
 set smartcase
-
-" syntactic recommended
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-" end recommended syntactic
+set incsearch
 
 " backups and other junky files
 " set backupdir=~/.vim/backup     " get backups outta here
