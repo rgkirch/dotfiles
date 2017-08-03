@@ -34,6 +34,8 @@ call vundle#begin()
 "Plugin 'Valloric/ListToggle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'tomlion/vim-solidity'
 "Plugin 'honza/vim-snippets'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'majutsushi/tagbar'
@@ -58,8 +60,7 @@ set laststatus=2
 filetype off
 
 " syntax highlighting
-" syntax on
-
+syntax on
 let mapleader = ","
 
 " Syntastic reccomended defaults
@@ -103,6 +104,17 @@ cmap w!! w !sudo tee > /dev/null %
 set ignorecase
 set smartcase
 set incsearch
+
+" syntactic recommended
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+" end recommended syntactic
 
 " backups and other junky files
 " set backupdir=~/.vim/backup     " get backups outta here
