@@ -12,8 +12,9 @@ vnoremap <Space>cp "+p<CR>
 
                                     "edit vimrc
 nnoremap <Space>vrc :edit $MYVIMRC<CR>
-nnoremap <Space><C-V> :action VimVisualToggleBlockMode<CR>
-nnoremap <C-V> :action EditorPasteSimple<CR>
+nnoremap <Space><C-V> :action EditorPasteSimple<CR>
+nnoremap <C-V> :action VimVisualToggleBlockMode<CR>
+nnoremap <Space><C-A> :action $SelectAll<CR>
 
 set number
 set autochdir
