@@ -102,8 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias update="sudo apt-get update"
-alias upgrade="sudo apt-get upgrade"
+alias update="sudo apt-get update "
+alias upgrade="sudo apt-get upgrade "
 alias pwdxcl="pwd | xclip -selection clipboard"
 alias addall="git add --all :/"
 alias dpkgbysize="dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n"
@@ -113,8 +113,13 @@ alias ddstatus="sudo kill -USR1 $(pgrep "^dd$")"
 alias dec="xbacklight -dec 6"
 alias inc="xbacklight -inc 14"
 alias gsm="gnome-system-monitor"
-alias fuck="ssh"
-alias install="sudo apt-get install"
+
+BROWSER=/usr/sbin/firefox
+EDITOR=/usr/sbin/vim
+alias ginitrec="git submodule update --init --recursive"
+alias dim="xrandr --output DVI-1 --brightness"
+alias gocinder="cd ~/Documents/rgkirch/graphics/cinder/"
+
 alias apti="sudo apt install"
 alias wfica.sh="/opt/Citrix/ICAClient/wfica.sh"
 
@@ -123,9 +128,16 @@ alias grun='java org.antlr.v4.gui.TestRig'
 
 BROWSER=/usr/sbin/firefox
 EDITOR=/usr/sbin/vim
-alias gst="git status "
 alias cinder="rgkirch; cd glfw/cinder"
 alias rgkirch="cd ~/Documents/rgkirch"
+
+if [[ $(hostname)=="delta" ]]; then
+    alias cinder="rgkirch; cd glfw/cinder"
+    alias rgkirch="cd ~/Documents/rgkirch"
+fi
+
+# git stuff
+alias gst="git status "
 alias gad="git add "
 alias thewall="sudo openvpn ~/Documents/theWall/thewall-udp-1194-richie/thewall-udp-1194-richie.ovpn"
 alias delta="ssh -t -X richie@192.168.1.136 screen -R"
@@ -133,3 +145,5 @@ alias reload="source ~/Documents/rgkirch/dotfiles/.bash_aliases"
 alias giff="git diff "
 alias search="apt-cache search "
 
+alias install="sudo apt-get install "
+alias gcmt="git commit "

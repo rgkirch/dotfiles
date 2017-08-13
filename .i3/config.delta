@@ -12,9 +12,14 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
+<<<<<<< HEAD:.i3/config.delta
+bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec xterm-same-dir
+=======
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xterm-same-dir
 bindsym $mod+n exec xterm-same-dir
+>>>>>>> a800d4a240f1b0ab7d4d8e99f2cea44f5f6afff2:.i3/config
 bindsym $mod+p exec i3-sensible-terminal
 #bindsym $mod+Shift+Return exec nohup uxterm -w 0 -vb -e "cd $PWD && $SHELL" >/dev/null 2>&1 &
 #bindsym $mod+Shift+Return exec xterm-same-dir

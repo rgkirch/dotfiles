@@ -1,19 +1,20 @@
-silent! source .vimlocal
-nmap <F8> :bn
-nmap <F7> :bN
+nnoremap <F8> gt
+nnoremap <F7> gT
                                     "!! <highlighted text> runs the text in a terminal
-vmap <Space>e "zyo!!z
+vnoremap <Space>e yo<ESC>!!<C-R>"<CR>
                                     "reloads the vimrc
-nmap <Space>rr :source $MYVIMRC
+nnoremap <Space>rr :source ~/.ideavimrc<CR>
+
                                     "yank text to clipboard
-vmap <Space>cc "+y
+vnoremap <Space>cc "+y<CR>
                                     "paste text from clipboard
-vmap <Space>cp "+p
-                                    "doesn't work unless the terminal is set up
-nmap <C-S> :w
+vnoremap <Space>cp "+p<CR>
 
                                     "edit vimrc
-nmap <Space>vrc :edit $MYVIMRC
+nnoremap <Space>vrc :edit $MYVIMRC<CR>
+nnoremap <Space><C-V> :action EditorPasteSimple<CR>
+nnoremap <C-V> :action VimVisualToggleBlockMode<CR>
+nnoremap <Space><C-A> :action $SelectAll<CR>
 
 set number
 set autochdir
@@ -33,85 +34,78 @@ call vundle#begin()
 "let $PYTHONPATH='/usr/lib/python3.5/site-packages'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'Valloric/ListToggle'
-"Plugin 'honza/vim-snippets'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'mattn/emmet-vim'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'ElmCast/elm-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'w0rp/ale'
+"Plugin 'honza/vim-snippets'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'mattn/emmet-vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tomlion/vim-solidity'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'will133/vim-dirdiff'
-"Plugin 'wincent/command-t'
+Plugin 'wincent/command-t'
+"Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
+Plugin 'will133/vim-dirdiff'
 call vundle#end()
 " end vundle
 filetype plugin indent on
 
-<<<<<<< HEAD
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
-=======
->>>>>>> 91ea89674a85c651185ee8bdff51f67f77326736
 set laststatus=2
 
 filetype off
 
 " syntax highlighting
-syntax on
+" syntax on
 
-"let g:ycm_global_ycm_extra_conf = '$HOME/dotfiles/.ycm_global_ycm_extra_conf'
-"let g:ycm_confirm_extra_conf = 1
-"let g:ycm_extra_conf_globlist = ['$HOME/dotfiles/.ycm_extra_conf.py', '/home/eve/Github/myGL/.ycm_extra_conf.py']
-"let g:ycm_complete_in_comments = 1 
-"let g:ycm_seed_identifiers_with_syntax = 1 
-"let g:ycm_collect_identifiers_from_comments_and_strings = 1
-"let g:ycm_server_keep_logfiles = 1
+let mapleader = ","
 
-"let g:colorscheme_switcher_exclude = []
+" Syntastic reccomended defaults
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
+let g:ycm_global_ycm_extra_conf = '$HOME/dotfiles/.ycm_global_ycm_extra_conf'
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_extra_conf_globlist = ['$HOME/dotfiles/.ycm_extra_conf.py', '/home/eve/Github/myGL/.ycm_extra_conf.py']
+let g:ycm_complete_in_comments = 1 
+let g:ycm_seed_identifiers_with_syntax = 1 
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_server_keep_logfiles = 1
+
+let g:colorscheme_switcher_exclude = []
+
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+
+" gruvbox
 " g:gruvbox_bold
 " g:gruvbox_italic
 " g:gruvbox_underline
 " g:gruvbox_undercurl
 " g:gruvbox_termcolors
-" nnoremap <leader>r :Ypf{a"f}i":s/, /", "/g02dwichar* eaNames[]
+" nnoremap <leader>r :Ypf{a"f}i":s/, /", "/g
+02dwichar* eaNames[]
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <down> gj
 nnoremap <up> gk
-vnoremap <Space>e yo!!"
-noremap <Space>cp "+p
-noremap <Space>cc "+y
-nnoremap <Space>pp :CtrlP
-nnoremap <Space>rr :source $MYVIMRC
-nnoremap <CR> :
-nnoremap <F8> :bn
-nnoremap <F7> :bN
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>cp "+p
+nnoremap <leader>cy "+y
+vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
+cmap w!! w !sudo tee > /dev/null %
 set ignorecase
 set smartcase
 set incsearch
-
-" syntactic recommended
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-" end recommended syntactic
 
 " backups and other junky files
 " set backupdir=~/.vim/backup     " get backups outta here
@@ -134,9 +128,9 @@ set background=dark
 
 " LaTeX exponent
 " visual select text and @e to convert to superscript
-"au FileType *.tex let @e = "da$$^[i^{}^[hp"
-"au FileType *.py filetype indent plugin on
-"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+au FileType *.tex let @e = "da$$^[i^{}^[hp"
+au FileType *.py filetype indent plugin on
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 "autocmd CompleteDone * pclose
 
