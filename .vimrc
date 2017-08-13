@@ -58,12 +58,6 @@ call vundle#end()
 " end vundle
 filetype plugin indent on
 
-<<<<<<< HEAD
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
-=======
->>>>>>> 91ea89674a85c651185ee8bdff51f67f77326736
 set laststatus=2
 
 filetype off
