@@ -106,7 +106,6 @@ alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 alias pwdxcl="pwd | xclip -selection clipboard"
 alias addall="git add --all :/"
-alias fuckoff="poweroff"
 alias dpkgbysize="dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n"
 alias us="setxkbmap -layout us"
 alias dv="setxkbmap -layout dvorak"
@@ -115,7 +114,7 @@ alias dec="xbacklight -dec 6"
 alias inc="xbacklight -inc 14"
 alias gsm="gnome-system-monitor"
 alias fuck="ssh"
-alias install="pacaur --noconfirm -S"
+alias install="sudo apt-get install"
 alias apti="sudo apt install"
 alias wfica.sh="/opt/Citrix/ICAClient/wfica.sh"
 
@@ -124,7 +123,13 @@ alias grun='java org.antlr.v4.gui.TestRig'
 
 BROWSER=/usr/sbin/firefox
 EDITOR=/usr/sbin/vim
-alias gst="git status"
+alias gst="git status "
 alias cinder="rgkirch; cd glfw/cinder"
 alias rgkirch="cd ~/Documents/rgkirch"
 alias gad="git add "
+alias thewall="sudo openvpn ~/Documents/theWall/thewall-udp-1194-richie/thewall-udp-1194-richie.ovpn"
+alias delta="ssh -t -X richie@192.168.1.136 screen -R"
+alias reload="source ~/Documents/rgkirch/dotfiles/.bash_aliases"
+alias giff="git diff "
+alias search="apt-cache search "
+
