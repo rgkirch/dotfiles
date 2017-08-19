@@ -1,0 +1,221 @@
+# ',.gcrhtnsideo-
+#
+# ;qjbmz
+
+#smart_borders on
+
+hide_edge_borders both
+new_window pixel 0
+
+set $mod Mod1
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+floating_modifier $mod
+#bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec xterm-same-dir
+bindsym $mod+Return exec xterm-same-dir
+bindsym $mod+n exec xterm-same-dir
+bindsym $mod+p exec i3-sensible-terminal
+#bindsym $mod+Shift+Return exec nohup uxterm -w 0 -vb -e "cd $PWD && $SHELL" >/dev/null 2>&1 &
+#bindsym $mod+Shift+Return exec xterm-same-dir
+bindsym $mod+Shift+Return exec urxvt -cd "$(xcwd)"
+bindsym $mod+Shift+b kill
+#bindsym $mod+e exec --no-startup-id dmenu_run -i -fn liberation-serif -nb black -nf white -sb white -sf black
+bindsym $mod+Shift+e exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -i -fuzzy -p '' -font 'hermit 14' -bg '#000000' -hlbg '#000000' -fg '#FFFFFF' -hlfg '#ffb964' -bc '$red' -bw 2 -opacity 70"
+bindsym $mod+e exec rofi -opacity "75" -show run -fuzzy -threads 0
+#bindsym $mod+e exec rofi -fuzzy -show combi -combi-modi window,run
+bindsym $mod+f exec rofi -opacity "75" -show window -fuzzy -threads 0
+bindsym $mod+m workspace prev
+bindsym $mod+z workspace next
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+		
+	# split in horizontal orientation
+bindsym $mod+r split horizontal
+
+	# split in vertical orientation
+bindsym $mod+c split vertical
+
+	# enter fullscreen mode for the focused container
+bindsym $mod+g fullscreen
+
+	# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+period layout stacking
+bindsym $mod+comma layout tabbed
+bindsym $mod+apostrophe layout toggle split
+
+	# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+	# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+	# focus the parent container
+bindsym $mod+i focus parent
+
+	# focus the child container
+bindsym $mod+d focus child
+
+	# switch to workspace
+bindsym $mod+1 workspace 1; exec feh --bg-scale /tmp/work1
+bindsym $mod+2 workspace 2; exec feh --bg-scale /tmp/work2
+bindsym $mod+3 workspace 3; exec feh --bg-scale /tmp/work3
+bindsym $mod+4 workspace 4; exec feh --bg-scale /tmp/work4
+bindsym $mod+5 workspace 5; exec feh --bg-scale /tmp/work5
+bindsym $mod+6 workspace 6; exec feh --bg-scale /tmp/work6
+bindsym $mod+7 workspace 7; exec feh --bg-scale /tmp/work7
+bindsym $mod+8 workspace 8; exec feh --bg-scale /tmp/work8
+bindsym $mod+9 workspace 9; exec feh --bg-scale /tmp/work9
+#bindsym $mod+0 workspace 10
+
+	# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+#bindsym $mod+Shift+0 move container to workspace 10
+
+	# reload the configuration file
+bindsym $mod+Shift+r reload
+	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+q restart
+	# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+semicolon exec "i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'"
+
+# Set shut down, restart and locking features
+#bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+	# resize window (you can also use the mouse for that)
+mode "resize" {
+		bindsym h resize shrink width 1 px or 1 ppt
+		bindsym j resize grow height 1 px or 1 ppt
+		bindsym k resize shrink height 1 px or 1 ppt
+		bindsym l resize grow width 1 px or 1 ppt
+
+		bindsym Shift+h resize shrink width 10 px or 10 ppt
+		bindsym Shift+j resize grow height 10 px or 10 ppt
+		bindsym Shift+k resize shrink height 10 px or 10 ppt
+		bindsym Shift+l resize grow width 10 px or 10 ppt
+
+		# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+mode "ignore" {
+    bindsym Shift+Ctrl+Escape mode "default"
+    bindsym $mod+minus mode "default"
+}
+mode "no-num" {
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
+    bindsym $mod+m workspace prev
+    bindsym $mod+z workspace next
+    bindsym $mod+minus mode "default"
+    bindsym $mod+Shift+b kill
+}
+bindsym $mod+o mode "resize"
+bindsym $mod+a mode "no-num"
+
+# used xev
+# shift = 50
+#bindsym XF86KbdBrightnessUp exec xbacklight -inc 9
+#bindsym XF86KbdBrightnessDown exec xbacklight -dec 4
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 9
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 4
+bindsym Shift+Ctrl+F9 exec amixer set Master 2%-
+bindsym Shift+Ctrl+F10 exec amixer set Master 1%+
+bindsym Shift+Ctrl+F6 exec xbacklight -dec 4
+bindsym Shift+Ctrl+F7 exec xbacklight -inc 9
+bindsym Shift+Ctrl+F3 exec /home/richie/Dropbox/toggle-xinput.sh -t
+bindsym Shift+Ctrl+F4 exec xdotool type "$(xclip -o)"
+#bindsym XF86AudioLowerVolume exec amixer set Headphone 2dB-
+#bindsym XF86AudioRaiseVolume exec amixer set Headphone 1dB+
+#bindsym Ctrl+XF86AudioLowerVolume exec amixer set Speaker 2dB-
+#bindsym Ctrl+XF86AudioRaiseVolume  exec amixer set Speaker 1dB+
+#bindsym Ctrl+F5 exec arandr
+#bindsym --whole-window button4
+#bindsym --whole-window button5
+bindsym $mod+x [urgent=latest] focus
+
+#bindsym Super_L exec --no-startup-id i3exit lock, mode "default"
+
+#bindcode 121 exec amixer set Master 0%
+
+bar {
+    status_command i3status
+    font monospace
+	colors {
+			background #000000
+			statusline #FFFFFF #that neon blue
+			separator #FF69B4
+			focused_workspace  #4c7899 #285577 #ffffff
+			active_workspace   #333333 #5f676a #ffffff
+			inactive_workspace #333333 #222222 #888888
+			urgent_workspace   #2f343a #900000 #ffffff
+	}
+}
+
+# Autostart applications
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id nitrogen --restore
+exec --no-startup-id nm-applet
+# exec --no-startup-id volumeicon
+exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id pamac-tray
+# exec --no-startup-id clipit
+# exec --no-startup-id blueman
+# exec_always --no-startup-id sbxkb
+# exec --no-startup-id compton -b
+# exec --no-startup-id start_my_conky
+# exec --no-startup-id start_conky_green
+exec --no-startup-id xautolock -time 10 -locker blurlock -lockaftersleep
+
+font monospace
+#mouse_warping output|none
+#focus_follows_mouse yes|no
+#popup_during_fullscreen smart|ignore|leave_fullscreen
+#workspace_auto_back_and_forth yes
+
+#exec capsescape
+#exec indicator-cpufreq
+exec --no-startup-id dropbox start
+exec sh ~/rgkirch/dotfiles/loadBackgroundsToTmp.sh
+#exec --no-startup-id sleep 15; synergy; move container to workspace 0
+#exec --no-startup-id easystroke enable hide;
+#exec --no-startup-id syndaemon -i .2 -K -d
+exec --no-startup-id xrdb ~/.Xresources
+#bindsym Mod4+l exec dm-tool lock
+#exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/gnome-system-monitor; exec /usr/bin/gnome-power-statistics; exec /usr/bin/unity-control-center; workspace 1'
+#showkey
+
+#exec i3status | /usr/lib/python3.5/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3
+#exec i3status | lemonbar -p --i3
