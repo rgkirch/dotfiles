@@ -102,11 +102,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias update="sudo apt-get update"
-alias upgrade="sudo apt-get upgrade"
+alias update="sudo apt-get update "
+alias upgrade="sudo apt-get upgrade "
 alias pwdxcl="pwd | xclip -selection clipboard"
 alias addall="git add --all :/"
-alias fuckoff="poweroff"
 alias dpkgbysize="dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n"
 alias us="setxkbmap -layout us"
 alias dv="setxkbmap -layout dvorak"
@@ -114,7 +113,6 @@ alias ddstatus="sudo kill -USR1 $(pgrep "^dd$")"
 alias dec="xbacklight -dec 6"
 alias inc="xbacklight -inc 14"
 alias gsm="gnome-system-monitor"
-alias fuck="ssh"
 
 BROWSER=/usr/sbin/firefox
 EDITOR=/usr/sbin/vim
@@ -130,22 +128,24 @@ alias grun='java org.antlr.v4.gui.TestRig'
 
 BROWSER=/usr/sbin/firefox
 EDITOR=/usr/sbin/vim
+alias cinder="rgkirch; cd glfw/cinder"
+alias rgkirch="cd ~/Documents/rgkirch"
 
 if [[ $(hostname)=="delta" ]]; then
     alias cinder="rgkirch; cd glfw/cinder"
     alias rgkirch="cd ~/Documents/rgkirch"
 fi
 
-if [[ $(uname -a | grep Ubuntu)=="delta" ]]; then
-    alias install="sudo apt-get install"
-    alias search="apt-cache search"
-else
-    alias install="pacaur --noconfirm -S"
-fi
-
 # git stuff
-alias gad="git add"
-alias gst="git status"
+alias gst="git status "
 alias gad="git add "
+alias thewall="sudo openvpn ~/Documents/theWall/thewall-udp-1194-richie/thewall-udp-1194-richie.ovpn"
+alias delta="ssh -t -X richie@192.168.1.136 screen -R"
+alias reload="source ~/Documents/rgkirch/dotfiles/.bash_aliases"
+alias giff="git diff "
+alias search="apt-cache search "
+
+alias install="sudo apt-get install "
+alias gcmt="git commit "
 # added by Anaconda3 4.4.0 installer
 export PATH="/home/richie/anaconda3/bin:$PATH"
