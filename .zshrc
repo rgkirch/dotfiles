@@ -147,3 +147,5 @@ fi
 alias gad="git add"
 alias gst="git status"
 alias gad="git add "
+# added by Anaconda3 4.4.0 installer
+export PATH="/home/richie/anaconda3/bin:$PATH"

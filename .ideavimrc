@@ -1,5 +1,5 @@
-nnoremap <F8> gt
-nnoremap <F7> gT
+"nnoremap <F8> gt
+"nnoremap <F7> gT
                                     "!! <highlighted text> runs the text in a terminal
 vnoremap <Space>e yo<ESC>!!<C-R>"<CR>
                                     "reloads the vimrc
@@ -14,6 +14,7 @@ vnoremap <Space>cp "+p<CR>
 nnoremap <Space>vrc :edit $MYVIMRC<CR>
 nnoremap <Space><C-V> :action EditorPasteSimple<CR>
 nnoremap <C-V> :action VimVisualToggleBlockMode<CR>
+inoremap <C-V> <ESC>:action $Paste<CR>i
 nnoremap <Space><C-A> :action $SelectAll<CR>
 
 set number
