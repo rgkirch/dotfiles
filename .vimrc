@@ -1,19 +1,39 @@
 silent! source .vimlocal
-nmap <F8> :bn
-nmap <F7> :bN
-                                    "!! <highlighted text> runs the text in a terminal
-vmap <Space>e "zyo!!z
-                                    "reloads the vimrc
-nmap <Space>rr :source $MYVIMRC
-                                    "yank text to clipboard
-vmap <Space>cc "+y
-                                    "paste text from clipboard
-vmap <Space>cp "+p
-                                    "doesn't work unless the terminal is set up
-nmap <C-S> :w
 
-                                    "edit vimrc
-nmap <Space>vrc :edit $MYVIMRC
+" syntax highlighting
+syntax on
+
+set encoding=utf-8
+"set guifont=Consolas:h16
+
+filetype plugin indent on
+
+nnoremap <C-S> :w<CR>
+nnoremap <F7> :bN<CR>
+nnoremap <F8> :bn<CR>
+nnoremap <SPACE>rr :source $MYVIMRC<CR>
+nnoremap <SPACE>rc :edit $MYVIMRC<CR>
+nnoremap <CR> :
+nnoremap <down> <C-E>gj
+nnoremap <F5> :buffers<CR>:buffer<SPACE>
+nnoremap <F7> :bn<CR>
+nnoremap <F8> :bn<CR>
+nnoremap <SPACE>ex :Explore<CR>
+nnoremap <SPACE>pp :ctrlp<CR>
+nnoremap <SPACE>rr :source $MYVIMRC<CR>
+nnoremap <UP> <c-y>gk
+noremap <SPACE>cc "+y
+noremap <SPACE>cp "+p
+vnoremap * y/<C-R>"<CR>
+vnoremap <SPACE>cc "+y
+vnoremap <SPACE>cp "+p
+vnoremap <SPACE>ee yo<ESC>!!<C-R>"<CR>
+vnoremap <SPACE>el Vyo<ESC>!!<C-R>"<CR>
+nnoremap <SPACE>gc Go<ESC>!!g++ -std=c++14 -Wall <C-R>%<CR>
+vnoremap <SPACE>be sbegin(<C-R>"), end(<C-R>")<ESC>
+
+vnoremap < <gv
+vnoremap > >gv
 
 set number
 set autochdir
@@ -25,7 +45,6 @@ set shiftwidth=4
 set expandtab
 set fillchars+=vert:\ 
 set nocompatible
-filetype off
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -38,11 +57,12 @@ call vundle#begin()
 "Plugin 'mattn/emmet-vim'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'xolox/vim-colorscheme-switcher'
+Plugin 'vim-utils/vim-man'
 Plugin 'ElmCast/elm-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 Plugin 'morhetz/gruvbox'
 Plugin 'rust-lang/rust.vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -56,15 +76,10 @@ Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 call vundle#end()
 " end vundle
-filetype plugin indent on
 
 set laststatus=2
 
-filetype off
-
-" syntax highlighting
-syntax on
-
+let g:airline#extensions#ale#enabled = 0
 "let g:ycm_global_ycm_extra_conf = '$HOME/dotfiles/.ycm_global_ycm_extra_conf'
 "let g:ycm_confirm_extra_conf = 1
 "let g:ycm_extra_conf_globlist = ['$HOME/dotfiles/.ycm_extra_conf.py', '/home/eve/Github/myGL/.ycm_extra_conf.py']
@@ -81,17 +96,7 @@ syntax on
 " g:gruvbox_undercurl
 " g:gruvbox_termcolors
 " nnoremap <leader>r :Ypf{a"f}i":s/, /", "/g02dwichar* eaNames[]
-nnoremap <F5> :buffers<CR>:buffer<Space>
-nnoremap <down> gj
-nnoremap <up> gk
-vnoremap <Space>e yo!!"
-noremap <Space>cp "+p
-noremap <Space>cc "+y
-nnoremap <Space>pp :CtrlP
-nnoremap <Space>rr :source $MYVIMRC
-nnoremap <CR> :
-nnoremap <F8> :bn
-nnoremap <F7> :bN
+
 set ignorecase
 set smartcase
 set incsearch
