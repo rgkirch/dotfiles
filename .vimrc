@@ -1,4 +1,5 @@
 silent! source .vimlocal
+autocmd FileType cpp set keywordprg=cppman
 
 " syntax highlighting
 syntax on
@@ -7,36 +8,45 @@ set encoding=utf-8
 "set guifont=Consolas:h16
 
 filetype plugin indent on
+set viminfo='1000,<50,s10,h,rA:,rB:
+
+" display line numbers
+set number
+
+set ignorecase
+set smartcase
+set incsearch
+set autochdir
+
+set nocompatible
 
 nnoremap <C-S> :w<CR>
+nnoremap <C-_> :call NERDComment(0, "toggle")<CR>+
+nnoremap <CR> :
+nnoremap <F2> :lnext<CR>
+nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F7> :bN<CR>
 nnoremap <F8> :bn<CR>
-nnoremap <SPACE>rr :source $MYVIMRC<CR>
-nnoremap <SPACE>rc :edit $MYVIMRC<CR>
-nnoremap <CR> :
-nnoremap <down> <C-E>gj
-nnoremap <F5> :buffers<CR>:buffer<SPACE>
-nnoremap <F7> :bn<CR>
-nnoremap <F8> :bn<CR>
-nnoremap <SPACE>ex :Explore<CR>
-nnoremap <SPACE>pp :ctrlp<CR>
-nnoremap <SPACE>rr :source $MYVIMRC<CR>
+nnoremap <Space>ae :!./a.out<CR>
+nnoremap <Space>ex :Explore<CR>
+nnoremap <Space>gc Go<ESC>!!g++ -std=c++14 -Wall -Wextra -pedantic <C-R>%<CR>
+nnoremap <Space>gc Go<ESC>!!clang -g -std=c++1z -Wall -Wextra -pedantic -lstdc++ <C-R>%<CR>
+nnoremap <Space>pp :ctrlp<CR>
+nnoremap <Space>rc :edit $MYVIMRC<CR>
+nnoremap <Space>rr :source $MYVIMRC<CR>
 nnoremap <UP> <c-y>gk
-noremap <SPACE>cc "+y
-noremap <SPACE>cp "+p
+nnoremap <down> <C-E>gj
+noremap <Space>cc "+y
+noremap <Space>cp "+p
 vnoremap * y/<C-R>"<CR>
-vnoremap <SPACE>cc "+y
-vnoremap <SPACE>cp "+p
-vnoremap <SPACE>ee yo<ESC>!!<C-R>"<CR>
-vnoremap <SPACE>el Vyo<ESC>!!<C-R>"<CR>
-nnoremap <SPACE>gc Go<ESC>!!g++ -std=c++14 -Wall <C-R>%<CR>
-vnoremap <SPACE>be sbegin(<C-R>"), end(<C-R>")<ESC>
+vnoremap <Space>be sbegin(<C-R>"), end(<C-R>")<ESC>
+vnoremap <Space>cc "+y
+vnoremap <Space>cp "+p
+vnoremap <Space>el yo<ESC>!!<C-R>"<CR>
+nnoremap <Space>el Vyo<ESC>!!<C-R>"<CR>
 
 vnoremap < <gv
 vnoremap > >gv
-
-set number
-set autochdir
 
                                     "a tab is 4 columns long
 set tabstop=4
@@ -44,7 +54,6 @@ set shiftwidth=4
                                     " convert tabs to spaces
 set expandtab
 set fillchars+=vert:\ 
-set nocompatible
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -97,10 +106,6 @@ let g:airline#extensions#ale#enabled = 0
 " g:gruvbox_termcolors
 " nnoremap <leader>r :Ypf{a"f}i":s/, /", "/g02dwichar* eaNames[]
 
-set ignorecase
-set smartcase
-set incsearch
-
 " syntactic recommended
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -126,8 +131,6 @@ set splitright
 colo gruvbox
 " caries over the indentation level
 set autoindent
-" display line numbers
-set nu
 " i have a dark background
 set background=dark
 
