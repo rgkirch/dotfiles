@@ -30,7 +30,7 @@ nnoremap <F8> :bn<CR>
 nnoremap <Space>ae :!./a.out<CR>
 nnoremap <Space>ex :Explore<CR>
 nnoremap <Space>gc Go<ESC>!!g++ -std=c++14 -Wall -Wextra -pedantic <C-R>%<CR>
-nnoremap <Space>gc Go<ESC>!!clang -g -std=c++1z -Wall -Wextra -pedantic -lstdc++ <C-R>%<CR>
+nnoremap <Space>cl Go<ESC>!!clang -g -std=c++1z -Wall -Wextra -pedantic -lstdc++ <C-R>%<CR>
 nnoremap <Space>pp :ctrlp<CR>
 nnoremap <Space>rc :edit $MYVIMRC<CR>
 nnoremap <Space>rr :source $MYVIMRC<CR>
