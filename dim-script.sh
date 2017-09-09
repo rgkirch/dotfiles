@@ -10,7 +10,12 @@ do
   elif [[  $(echo $x | grep Firefox) ]]; then
     if [[ $x != "Firefox" ]]; then
       x="Firefox"
-      xrandr --output HDMI-0 --brightness .8
+      xrandr --output HDMI-0 --brightness .7
+    fi
+  elif [[  $(echo $x | grep Vimperator) ]]; then
+    if [[ $x != "Vimperator" ]]; then
+      x="Vimperator"
+      xrandr --output HDMI-0 --brightness .7
     fi
   elif [[  $(echo $x | grep KeePass) ]]; then
     if [[ $x != "KeePass" ]]; then
@@ -25,7 +30,7 @@ do
   elif [[  $(echo $x | grep "Google Chrome") ]]; then
     if [[ $x != "Google Chrome" ]]; then
       x="Google Chrome"
-      xrandr --output HDMI-0 --brightness .8
+      xrandr --output HDMI-0 --brightness .7
     fi
   else
     if [[ $x != "" ]]; then

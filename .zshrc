@@ -148,3 +148,5 @@ alias search="apt-cache search "
 alias install="sudo apt-get install "
 alias gcmt="git commit "
 export PAGER=most
+# added by Anaconda3 4.4.0 installer
+export PATH="/home/richie/anaconda3/bin:$PATH"
