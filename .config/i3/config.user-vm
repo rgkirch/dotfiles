@@ -1,0 +1,109 @@
+hide_edge_borders both
+new_window pixel 0
+
+set $mod Mod1
+focus_follows_mouse no
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+floating_modifier $mod
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+b kill
+bindsym $mod+e exec rofi -opacity "75" -show run -fuzzy -threads 0
+bindsym $mod+f exec rofi -opacity "75" -show window -fuzzy -threads 0
+bindsym $mod+m workspace prev
+bindsym $mod+z workspace next
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+		
+	# split in horizontal orientation
+bindsym $mod+r split horizontal
+
+	# split in vertical orientation
+bindsym $mod+c split vertical
+
+	# enter fullscreen mode for the focused container
+bindsym $mod+g fullscreen
+
+	# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+period layout stacking
+bindsym $mod+comma layout tabbed
+bindsym $mod+apostrophe layout toggle split
+
+	# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+	# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+	# focus the parent container
+bindsym $mod+i focus parent
+
+	# focus the child container
+bindsym $mod+d focus child
+
+	# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+#bindsym $mod+Shift+0 move container to workspace 10
+
+	# reload the configuration file
+bindsym $mod+Shift+r reload
+	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+q restart
+	# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+semicolon exec "i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'"
+
+	# resize window (you can also use the mouse for that)
+mode "resize" {
+		bindsym h resize shrink width 1 px or 1 ppt
+		bindsym j resize grow height 1 px or 1 ppt
+		bindsym k resize shrink height 1 px or 1 ppt
+		bindsym l resize grow width 1 px or 1 ppt
+
+		bindsym Shift+h resize shrink width 10 px or 10 ppt
+		bindsym Shift+j resize grow height 10 px or 10 ppt
+		bindsym Shift+k resize shrink height 10 px or 10 ppt
+		bindsym Shift+l resize grow width 10 px or 10 ppt
+
+		# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
+
+mode "simple" {
+    bindsym $mod+Shift+Escape mode "default"
+    bindsym $mod+Tab focus right
+    bindsym $mod+Shift+Tab focus left
+}
+
+bindsym $mod+a mode "simple"
+
+bindsym $mod+o mode "resize"
+
+bindsym $mod+x [urgent=latest] focus
+
+exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id keynav
+
